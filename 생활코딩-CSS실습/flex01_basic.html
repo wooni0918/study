@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<header>
+		<style>
+			.container {
+				background-color:powderblue;
+				height:200px;
+				display:flex; /* 컨텐츠 영역만큼 자리차지 */
+				/* flex-direction:row-reverse; --- 오른쪽 정렬 */
+				flex-direction:row; /* 기본값 - 행(가로)의 방향으로 정렬 */
+				/* flex-direction:column; /* 열(수직)의 방향으로 정렬 */
+				/* flex-direction:column-reverse; /* 열의 방향으로 정렬 - column과 정렬순서가 바뀜 */
+			}
+			.item {
+				background-color:tomato; 
+				color:white; 
+				border:1px solid white;
+			}
+			.item:nth-child(2) {
+				flex-basis:200px;
+				/* 기본크기가 200px의 의미 */
+				/* flex-direction:row;일 때는 가로 기본크기가 200px의 의미 */
+				/* flex-direction:column;일 때는 세로 기본크기가 200px의 의미 */
+
+				/* flex-grow:0; */ 
+				/* 각각의 엘리먼트에 대한 flex-grow의 기본값은 0이다. */
+				/* flex-grow:1;로 할 경우 .container 영역을 각각의 앨리먼트들이 1/n로 나눠가짐 */
+			}
+		</style>
+	</header>
+	<body>
+		<div class="container">
+			<div class="item">1</div>
+			<div class="item">2</div>
+			<div class="item">3</div>
+			<div class="item">4</div>
+			<div class="item">5</div>
+		</div>
+		<!-- 중요한건 자식과 부모가 있어야 한다는 것!! -->
+	</body>
+</html>

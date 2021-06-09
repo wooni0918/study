@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<header>
+		<style>
+			.container {
+				background-color:powderblue;
+				height:200px;
+				display:flex; /* 컨텐츠 영역만큼 자리차지 */
+				/* flex-direction:row-reverse; --- 오른쪽 정렬 */
+				flex-direction:row; /* 기본값 - 행(가로)의 방향으로 정렬 */
+				/* flex-direction:column; /* 열(수직)의 방향으로 정렬 */
+				/* flex-direction:column-reverse; /* 열의 방향으로 정렬 - column과 정렬순서가 바뀜 */
+			}
+			.item {
+				background-color:tomato; 
+				color:white; 
+				border:1px solid white;
+			}
+
+			.item:nth-child(1) {
+				flex-basis:150px;
+				flex-shrink:1;
+			}
+
+			.item:nth-child(2) {
+				flex-basis:300px;
+				flex-shrink:2;
+				/* flex-shrink를 사용하기 위해서는 flex-basis 값을 가지고 있어야 한다. */
+				/* flex-shrink:0; 원래 컨테이너의 크기보다 작아졌을 때 크기가 줄어들지 않고 고정값을 가진다. */
+				/* flex-shrink:1; 원래 컨테이너의 크기보다 작아졌을 때 크기가 줄어든다. */	
+			}
+		</style>
+	</header>
+	<body>
+		<div class="container">
+			<div class="item">1</div>
+			<div class="item">2</div>
+			<div class="item">3</div>
+			<div class="item">4</div>
+			<div class="item">5</div>
+		</div>
+		<!-- 중요한건 자식과 부모가 있어야 한다는 것!! -->
+	</body>
+</html>
