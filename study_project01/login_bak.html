@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+        <meta name="viewport" content="width='device-width, initial-scale=1.0'">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>회원가입 정보입력</title>
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;1,100;1,300;1,400&display=swap" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+        <link href="style.css" rel="stylesheet" type="text/css" />
+        <link href="../studyCh/Login/fontawesome/css/all.css" rel="stylesheet">
+		<style>
+
+		</style>
+	<head>
+    </head>
+
+    <body>
+        <div class="login_wrap">
+            <h1><img src="./image/logo.png" alt="로고"></h1>
+            <form id="login">
+						<!--form id="login" onsubmit="javascript:alert('준비중입니다.'); return false;" /> -->
+                <div class="inputbox">
+                    <label for="email"><i class="fas fa-frog"></i></label>
+                    <input type="email" id="email" name="email" placeholder="이메일을 입력하세요">
+										<!-- <input type="email" id="email" name="email" placeholder="이메일을 입력하세요" required /> -->
+                </div>
+                <div class="inputbox">
+                    <label for="password"><i class="fas fa-archive"></i></label>
+                    <input type="password" placeholder="비밀번호를 입력하세요">
+										<!-- <input type="password" placeholder="비밀번호를 입력하세요" required /> -->
+                </div>
+                <div class="confirm">
+					<button type="submit" value="로그인">로그인</button>
+					<button type="button" value="회원가입">회원가입</button>
+					<!-- <button type="button" value="회원가입" onclick="javascript:location.href='./join_write.html'">회원가입</button> -->
+				</div>
+            </form>
+        </div>
+    </body>
+</html>
