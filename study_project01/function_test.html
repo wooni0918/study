@@ -1,0 +1,16 @@
+<script>
+	function sum(a,b) {
+		var chkStyle = /\d/ ;      //체크 방식(숫자)
+
+		if(chkStyle.test(a) && chkStyle.test(b)) {
+			//	var a1 = parseInt(a);
+			//	var b1 = parseInt(b);
+			return (a*1) + (b*1);	// parseInt와 동일 : 숫자로 변환
+			// return (a+"")+(b+"");	// toString : 문자열로 변환
+		} else {
+			return "숫자가 아닙니다.";
+		}
+	}
+
+	alert(sum(111,11));
+</script>

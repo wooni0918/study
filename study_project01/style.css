@@ -32,7 +32,7 @@ button[type="reset"], button[type="button"] {border:1px solid #08a600; backgroun
 .join_confirm h2 {letter-spacing:-0.5px;}
 .content {margin:20px 0;}
 .content dt {margin-bottom:8px;}
-.content dd {font-size:14px; color:#605d5b; background-color:#f6f6f6; border-radius:3px; padding-left:8px; box-sizing:border-box; height:48px; line-height:48px; margin-bottom:20px;}
+.content dd {font-size:14px; color:#605d5b; background-color:#f6f6f6; border-radius:3px; padding:13px 8px; box-sizing:border-box; min-height:48px; line-height:160%; margin-bottom:20px;}
 
 
 

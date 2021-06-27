@@ -14,70 +14,71 @@
 		</style>
 	<head>
 
-	<body>
-	<!-- <body onload="javascript:getParams()"> -->
+	<body onload="javascript:getData();">
 		<div class="join_confirm">
 			<h1><img src="./image/logo.png" alt="로고"></h1>
 			<h2>회원가입 정보</h2>
-			<!-- 각각 id값을 추가함 -->
 			<div class="content">
           <dl>
             <dt>이메일</dt>
-            <dd id="email">가입페이지에서 입력한값</dd>
+            <dd id="email"></dd>
           </dl>
           <dl>
             <dt>비밀번호</dt>
-            <dd id="password">가입페이지에서 입력한값</dd>
+            <dd id="password"></dd>
           </dl>
           <dl>
             <dt>생년월일</dt>
-            <dd id="birth">가입페이지에서 입력한값</dd>
+            <dd id="birth"></dd>
           </dl>
           <dl>
             <dt>성별</dt>
-            <dd id="gender">가입페이지에서 입력한값</dd>
+            <dd id="gender"></dd>
           </dl>
           <dl>
             <dt>자기소개</dt>
-            <dd id="self_introduction">가입페이지에서 입력한값</dd>
+            <dd id="self_introduction"></dd>
           </dl>
           <dl>
             <dt>이메일 광고 수신여부</dt>
-            <dd id="receive">가입페이지에서 입력한값</dd>
+            <dd id="receive"></dd>
           </dl>
-      </div>
-      <div class="confirm">
-				<button type="submit" value="가입신청">가입신청</button>
-				<button type="" value="이전으로" onclick="location.href='join_write.html'">이전으로</button>
-      </div>
+		</div>
+		  <div class="confirm">
+			<button type="submit" onclick="javascript:confrimJoin();">가입신청</button>
+			<button type="button" onclick="history.go(-1);">이전으로</button>
+		  </div>
 		</div>
 	</body>
 
 	
 	<script>
+	alert("회원가입이 완료되었습니다.");
 
-	// get을 가져오기 https://helloitstory.tistory.com/391
-	function getParams() {
-	    // 현재 URL 가져오기
-	    const url = location.href;
-	    // get 파라미터 값을 가져올 수 있는 ? 를 기점으로 slice 한 후 split 으로 나눔
-	    const parameters = (url.slice(url.indexOf('?') + 1, url.length)).split('&');
+	function getData() {
+	    const URLSearch = new URLSearchParams(location.search); // 객체 생성
+		
+		console.log("location.search", location.search);
+		console.log("new URLSearchParams(location.search)" ,  new URLSearchParams(location.search));
 
-	    let paramsObj = {};
 
-	    // 공백이 +인 경우 decode 하는 법 : https://derveljunit.tistory.com/242
-	    for (let i = 0; i < parameters.length; i++) {
-	        let paramsName = parameters[i].split('=')[0];
-	        let paramsValue = decodeURIComponent(decodeURI(parameters[i].split('=')[1]).replace(/\+/g, " "));
-	        paramsObj[paramsName] = paramsValue;
-	    }
+		var email = URLSearch.get('email');
+		var password = URLSearch.get('password');
+		var birth = URLSearch.get('birth');
+		var year = URLSearch.get('year');
+		var month = URLSearch.get('month');
+		var day = URLSearch.get('day');
+		var gender = URLSearch.get('gender');
+		var self_introduction = URLSearch.get('self_introduction');
+		var receive = URLSearch.get('receive');
 
-	    document.getElementById("email").innerHTML = paramsObj.email;
-	    document.getElementById("password").innerHTML = paramsObj.password;
-	    document.getElementById("birth").innerHTML = paramsObj.year+"-"+paramsObj.month+"-"+paramsObj.day;
-	    document.getElementById("gender").innerHTML = paramsObj.gender == "female" ? "여자" : "남자";
-	    document.getElementById("self_introduction").innerHTML = nl2br(paramsObj.self_introduction);
-	    document.getElementById("receive").innerHTML = paramsObj.receive == "Y" ? "수신함" : "수신하지않음";
+	    document.getElementById("email").innerHTML = email;
+	    document.getElementById("password").innerHTML = password;
+	    document.getElementById("birth").innerHTML = year+"-"+ month+"-"+ day;
+	    document.getElementById("gender").innerHTML = gender == "female" ? "여자" : "남자";
+	    document.getElementById("self_introduction").innerHTML = nl2br(self_introduction); // \n => br로 변경
+		//document.getElementById("self_introduction").innerHTML = self_introduction;
+		document.getElementById("receive").innerHTML = receive == "receive" ? "수신함" : "수신하지않음";
 	}
 	    function nl2br(str){ return str.replace(/\n/g, "<br />") }
 

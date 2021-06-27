@@ -10,8 +10,7 @@
 		<link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;1,100;1,300;1,400&display=swap" rel="stylesheet">
 		<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
         <link href="style.css" rel="stylesheet" type="text/css" />
-        <link href="https://kkggan.cafe24.com/studyCh/Login/fontawesome/css/all.css" rel="stylesheet">
-
+        <link href="../studyCh/Login/fontawesome/css/all.css" rel="stylesheet">
 		<style>
 
 		</style>
@@ -21,21 +20,23 @@
     <body>
         <div class="login_wrap">
             <h1><img src="./image/logo.png" alt="로고"></h1>
-            <form id="login" onsubmit="javascript:alert('준비중입니다.'); return flase;" />
+            <form id="login" action="login_check.php" method="get"> 
+			<!-- 원래는 method="post"로 보내야 함 / 지금은 공부중이니까 get으로!! -->
+						
                 <div class="inputbox">
                     <label for="email"><i class="fas fa-frog"></i></label>
-                    <input type="email" id="email" name="email" placeholder="이메일을 입력하세요" required />
-										<!-- required // <input> 태그의 required 속성은 폼 데이터(form data)가 서버로 제출되기 전 반드시 채워져 있어야 하는 입력 필드를 명시합니다. -->
+                    <input type="email" id="email" name="email" placeholder="이메일을 입력하세요" required>
+					<!-- required 필수값 입력 확인
+					required 속성은 불리언(boolean) 속성입니다. 불리언 속성은 해당 속성을 명시하지 않으면 속성값이 자동으로 false 값을 가지게 되며, 명시하면 자동으로 true 값을 가지게 됩니다.-->					
                 </div>
                 <div class="inputbox">
                     <label for="password"><i class="fas fa-archive"></i></label>
-                    <input type="password" placeholder="비밀번호를 입력하세요">
-										<!-- <input type="password" placeholder="비밀번호를 입력하세요" required /> -->
+                    <input type="password" id="password" name="password" placeholder="비밀번호를 입력하세요" required>
+										
                 </div>
                 <div class="confirm">
 					<button type="submit" value="로그인">로그인</button>
-					<button type="button" value="회원가입">회원가입</button>
-					<!-- <button type="button" value="회원가입" onclick="javascript:location.href='./join_write.html'">회원가입</button> -->
+					<button type="button" value="회원가입" onclick="javascript:location.href='./join_write.html'">회원가입</button>
 				</div>
             </form>
         </div>
