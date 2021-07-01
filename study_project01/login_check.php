@@ -20,7 +20,7 @@
 			return false; 
 		}
 		alert("로그인 성공!");
-		location.href = "main.html"; // 현재경로를 main.html로 바꾸라는 의미 => 페이지 이동이 일어난다.
+		location.href = "./index.html"; // 현재경로를 main.html로 바꾸라는 의미 => 페이지 이동이 일어난다.
 	}
 
 	login();
